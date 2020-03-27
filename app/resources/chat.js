@@ -3,11 +3,11 @@ const msgerInput = get(".msger-input");
 const msgerChat = get(".msger-chat");
 
 const BOT_MSGS = [
-  "Hi, how are you?",
-  "Ohh... I can't understand what you trying to say. Sorry!",
-  "I like to play games... But I don't know how to play!",
-  "Sorry if my answers are not relevant. :))",
-  "I feel sleepy! :("
+  "Pershendetje si jeni?",
+  "Testing 1",
+  "Testing 2",
+  "Testing  3",
+  "Testing 4"
 ];
 
 // Icons made by Freepik from www.flaticon.com
