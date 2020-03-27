@@ -4,8 +4,55 @@
   <title></title>
   <link rel="stylesheet" type="text/css" href="../resources/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  function getTime(){
+  var time;
+  var today = new Date();
+  var day = today.getDay();
+  var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+  console.log("Today is : " + daylist[day] + ".");
+  var hour = today.getHours();
+  var minute = today.getMinutes();
+  var second = today.getSeconds();
+  var prepand = (hour >= 12)? " PM ":" AM ";
+  hour = (hour >= 12)? hour - 12: hour;
+  if (hour===0 && prepand===' PM ') 
+  { 
+  if (minute===0 && second===0)
+  { 
+  hour=12;
+  prepand=' Noon';
+  } 
+  else
+  { 
+  hour=12;
+  prepand=' PM';
+  } 
+  } 
+  if (hour===0 && prepand===' AM ') 
+  { 
+  if (minute===0 && second===0)
+  { 
+  hour=12;
+  prepand=' Midnight';
+  } 
+  else
+  { 
+  hour=12;
+  prepand=' AM';
+  } 
+  } 
+  
+  time = hour +":"+minute+":"+second+prepand;
+  document.getElementById("firsttime").innerHTML = time;
+  return time;
+  }
+
+
+
+</script>
 </head>
-<body>
+<body onload="getTime();">
 <section class="msger">
   <header class="msger-header">
     <
@@ -26,8 +73,8 @@
 
       <div class="msg-bubble">
         <div class="msg-info">
-          <div class="msg-info-name">BOT</div>
-          <div class="msg-info-time">12:45</div>
+          <div class="msg-info-name">Covid19 - check</div>
+          <div class="msg-info-time" id="firsttime"></div>
         </div>
 
         <div class="msg-text">
@@ -45,11 +92,7 @@
       <div class="msg-bubble">
         <div class="msg-info">
           <div class="msg-info-name"></div>
-          <div class="msg-info-time">12:46</div>
-        </div>
-
-        <div class="msg-text">
-          You can change your name in JS section!
+          <div class="msg-info-time"></div>
         </div>
       </div>
     </div>
